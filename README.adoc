@@ -1,4 +1,5 @@
 # globalstrim-test-task
+
 Test task for GlobalStrim candidates
 
 Deadline: Friday 22 Apr 2016
