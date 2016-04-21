@@ -1,0 +1,40 @@
+# globalstrim-test-task
+Test task for GlobalStrim candidates
+
+Deadline: Friday 22 Apr 2016
+
+## Overview
+
+Create a web application in which user can register and view and edit his profile.
+
+### Registration fields:
+
+* Name
+* Phone number
+* Birthdate
+* Address
+* ID Scan (accept JPG, PNG, PDF up to 2MB)
+
+When user registers they must be redirected to the profile view with the information they specified during registration.
+
+Users also must be able to edit all the fields in their profile.
+
+In addition to the above all the operations should also be accessible via RESTful API (JSON and/or XML based).
+
+## Technical requirements
+
+Backend Platform: Java SE8 + (Spring Boot or Java EE7)
+
+Frontend Platform: Either HTML5 + Javascript (single page app), or server-side based on JSP or Thymeleaf or Freemarker/Velocity
+
+RDBMS: any embedded SQL via JPA
+
+Project Management: Maven
+
+## Additional requirements:
+
+* All fields must be validated during both registration and edit
+* Birthdate should only be editable once
+* Tests should cover as much code as possible
+* The application should be runnable without installation of anything besides JVM an WildFly (the latter should only be needed if Java EE7 was used).
+* Code should be posted to github: fork this repository, add your code, push. I'd also like to see intermediate commits, not only the final version. Final version should be tagged with '1.0-final'
