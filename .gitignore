@@ -1,0 +1,16 @@
+.idea
+.idea/*
+*.iml
+*/*.iml
+.DS_Store
+*/target
+*/target
+target/
+.settings
+.classpath
+.project
+*.orig
+*.~vsdx
+.bpmn/
+
+build-deploy.bat
