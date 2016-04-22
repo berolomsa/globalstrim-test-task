@@ -13,9 +13,8 @@ public class UserManagerTest {
 		user.setName("bero");
 		user.setPhoneNumber("598900310");
 		user.setBirthDate("19/50/2016");
-		user.setIdScan(new byte[5]);
 		user.setAddress("Muxiani");
 		User mergedUser = userManagerBean.updateUser(user);
-		Assert.assertEquals("bero", mergedUser.getName());
+		Assert.assertTrue(mergedUser.getId() > 0);
 	}
 }

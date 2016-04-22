@@ -47,6 +47,18 @@
             <artifactId>h2</artifactId>
             <version>1.4.182</version>
         </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+            <version>1.0-SP1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+            <version>1.0.1.Final</version>
+        </dependency>
+
     </dependencies>
 
     <build>

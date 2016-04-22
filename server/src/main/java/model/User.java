@@ -1,31 +1,36 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
 @XmlRootElement
-public class User implements Serializable{
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id @GeneratedValue
+	@XmlElement
 	private Long id;
-
+	@XmlElement
 	private String name;
-
+	@XmlElement
 	private String address;
-
+	@XmlElement
 	private String birthDate;
-
+	@XmlElement
 	private String phoneNumber;
 
-	@Lob
-	private byte[] idScan;
+	public User() {
+	}
 
 	public String getName() {
 		return name;
@@ -67,11 +72,14 @@ public class User implements Serializable{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public byte[] getIdScan() {
-		return idScan;
-	}
-
-	public void setIdScan(byte[] idScan) {
-		this.idScan = idScan;
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", address='" + address + '\'' +
+				", birthDate='" + birthDate + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				'}';
 	}
 }

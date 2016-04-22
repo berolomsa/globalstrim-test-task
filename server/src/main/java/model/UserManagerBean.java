@@ -5,18 +5,10 @@ import javax.persistence.*;
 
 @Stateless
 public class UserManagerBean {
-	private EntityManager entityManager = null;
-
-	public EntityManager getEntityManager() {
-		if (entityManager == null) {
-			EntityManagerFactory factory = Persistence.createEntityManagerFactory("test");
-			entityManager = factory.createEntityManager();
-		}
-		return entityManager;
-	}
+	@PersistenceContext
+	private EntityManager em;
 
 	public User updateUser(User user) {
-		EntityManager em = getEntityManager();
 		return em.merge(user);
 	}
 
