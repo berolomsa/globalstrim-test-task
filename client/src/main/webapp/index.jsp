@@ -36,6 +36,11 @@
                 <label for="address">Address:</label>
                 <input type="text" class="address form-control" name="address" id="address" placeholder="Address">
             </div>
+            <%--<form id="uploadForm" action="rest/user/upload" method="post" enctype="multipart/form-data">--%>
+                <%--<label for="file">Upload Id Scan:</label>--%>
+                <%--<input type="hidden" name="MAX_FILE_SIZE" value="2097152" />--%>
+                <%--<input type="file"  id="file" accept=".jpg,.png,.pdf" name="file" />--%>
+            <%--</form>--%>
             <button id="submit" type="submit" class="btn btn-default">Submit</button>
 
         </form>
@@ -76,7 +81,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="birthdateEdit" id="birthdateEdit" placeholder="BirthDate">
+                                            <input type="text" class="form-control" disabled=true name="birthdateEdit" id="birthdateEdit" placeholder="BirthDate">
                                         </div></td>
                                     </td>
                                 </tr>
@@ -121,7 +126,6 @@
                     birthdate: "required"
                 },
 
-                // Specify the validation error messages
                 messages: {
                     name: "Field is required",
                     phone: "Field is required",
@@ -150,13 +154,12 @@
                                 $('#birthdateEdit').val(data.birthDate);
                                 $('#addressEdit').val(data.address);
                                 $('#phoneEdit').val(data.phoneNumber);
-
+                                alert("User Registered");
                             },
                             error: function(jqXHR, textStatus, errorThrown){
                                 alert('Error During Registration ' + textStatus);
                             }
                         });
-
                     }
                     $('#form').validate().resetForm();
                     return false;
@@ -173,7 +176,6 @@
                     birthdateEdit: "required"
                 },
 
-                // Specify the validation error messages
                 messages: {
                     nameEdit: "Field is required",
                     phoneEdit: "Field is required",
@@ -185,7 +187,7 @@
                     $(this).unbind('edit');
                     if($('#editForm').valid() == true){
                         $.ajax({
-                            type: 'POST',
+                            type: 'PUT',
                             headers: {
                                 'Accept': 'application/json',
                                 'Content-Type': 'application/json'
@@ -200,7 +202,7 @@
                                 $('#birthdateEdit').val(data.birthDate);
                                 $('#addressEdit').val(data.address);
                                 $('#phoneEdit').val(data.phoneNumber);
-
+                                alert("User Edited");
                             },
                             error: function(jqXHR, textStatus, errorThrown){
                                 alert('Error During Update ' + textStatus);

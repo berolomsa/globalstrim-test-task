@@ -7,7 +7,7 @@
     <groupId>com.gstream.test</groupId>
     <artifactId>TestTask</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>client</module>
         <module>ear</module>

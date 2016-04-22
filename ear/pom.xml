@@ -5,7 +5,7 @@
     <parent>
         <artifactId>TestTask</artifactId>
         <groupId>com.gstream.test</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <name>Ear</name>
@@ -31,7 +31,7 @@
                             <version>6</version>
                             <applicationName>testTask</applicationName>
                             <initializeInOrder>true</initializeInOrder>
-                            <finalName>ear-${project.version}</finalName>
+                            <finalName>${project.version}-final</finalName>
                             <defaultJavaBundleDir>lib</defaultJavaBundleDir>
                             <modules>
                             <ejbModule>
